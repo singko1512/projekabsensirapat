@@ -25,3 +25,18 @@ _ide_helper.php
 Homestead.json
 Homestead.yaml
 Thumbs.db
+/memori.md
+
+# Face service
+/face-service/venv/
+/face-service/.env
+/face-service/__pycache__/
+/face-service/app/**/__pycache__/
+/face-service/.cache/
+/face-service/models/*.pt
+/face-service/models/*.pth
+/face-service/models/*.onnx
+/face-service/models/*.h5
+/face-service/embeddings/*.npy
+/face-service/embeddings/*.pkl
+memori.md
