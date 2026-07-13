@@ -32,7 +32,7 @@ return new class extends Migration
         });
 
         // 3. Tabel Kunjungan
-        Schema::create('kunjunjans', function (Blueprint $table) {
+        Schema::create('kunjungans', function (Blueprint $table) {
             $table->id('id_Kunjungan');
             $table->string('keperluan');
             $table->date('tanggal_kunjungan');
