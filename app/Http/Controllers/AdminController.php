@@ -109,3 +109,4 @@ class AdminController extends Controller
         return response()->json(['message' => 'Laporan berhasil dicetak', 'data' => $logbook]);
     }
 }
+
