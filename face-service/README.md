@@ -39,7 +39,19 @@ Di mesin ini, venv sudah dibuat memakai Python 3.11.9.
 Jalankan API:
 
 ```bash
-uvicorn app.main:app --host 127.0.0.1 --port 8001 --reload
+python run.py
+```
+
+Atau dari root project:
+
+```bash
+python face-service/run.py
+```
+
+Di Windows juga bisa jalankan:
+
+```bash
+face-service\start.bat
 ```
 
 Tes health check:
@@ -48,14 +60,32 @@ Tes health check:
 GET http://127.0.0.1:8001/health
 ```
 
+Buka halaman kamera test:
+
+```text
+http://127.0.0.1:8001/camera
+```
+
+Root service Python hanya untuk info API:
+
+```text
+GET http://127.0.0.1:8001/
+```
+
+Halaman utama aplikasi tetap dari Laravel, bukan dari service Python.
+
 ## Endpoint Awal
 
 ```text
 GET /health
+GET /
+GET /camera
+POST /enroll
 POST /recognize
 ```
 
-Endpoint `/recognize` saat ini masih placeholder. Nanti endpoint ini akan menerima gambar dari Laravel, menjalankan liveness check, membuat embedding wajah, lalu mengembalikan hasil verifikasi.
+Endpoint `/enroll` menyimpan embedding lokal ke `embeddings/users.json`.
+Endpoint `/recognize` membandingkan gambar dari kamera dengan data enroll lokal.
 
 ## Catatan
 
