@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-    Schema::create('logbook', function (Blueprint $table) {
-            $table->id('idLog');
-            $table->foreignId('id_agenda')->constrained('agenda', 'id_agenda')->onDelete('cascade');
-            $table->text('catatan');
-            $table->dateTime('waktu_isi');
+        Schema::create('admins', function (Blueprint $table) {
+            $table->id('id_admin');
+            $table->string('username')->unique();
+            $table->string('nama');
+            $table->string('password');
             $table->timestamps();
         });
     }
@@ -25,7 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('logbook');
+        Schema::dropIfExists('admins');
     }
 };
-
