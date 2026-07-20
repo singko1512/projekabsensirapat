@@ -10,7 +10,6 @@ return new class extends Migration
     {
         Schema::create('app_md_tamu', function (Blueprint $table) {
             $table->bigIncrements('id_tamu');
-            $table->string('nik')->nullable();
             $table->string('nama');
             $table->string('jabatan')->nullable();
             $table->string('no_hp');
